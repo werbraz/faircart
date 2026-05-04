@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const FINANCE_APP_URL = 'https://finance-app-werbrazs-projects.vercel.app'
+const FINANCE_APP_URL = import.meta.env.VITE_FINANCE_APP_URL || 'https://finance-app-werbrazs-projects.vercel.app'
 const HISTORY_KEY = 'faircart_history'
 
 function buildMyTransactions(items, receiptInfo) {

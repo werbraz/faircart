@@ -4,6 +4,7 @@ import BillItemList from './components/BillItemList'
 import SummaryCards from './components/SummaryCards'
 import ApiKeyInput from './components/ApiKeyInput'
 import { useReceiptScanner } from './hooks/useReceiptScanner'
+import SaveShareBar from './components/SaveShareBar'
 
 export default function App() {
   const [apiKey, setApiKey] = useState(localStorage.getItem('faircart_openrouter_key') || '')
@@ -130,6 +131,9 @@ export default function App() {
 
         {/* Items */}
         <BillItemList items={items} onOwnerChange={handleOwnerChange} />
+
+        {/* Save & Share */}
+        <SaveShareBar items={items} receiptInfo={receiptInfo} totals={totals} />
 
         {/* Reset */}
         {items.length > 0 && (
